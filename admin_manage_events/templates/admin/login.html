@@ -1,0 +1,91 @@
+{% extends "admin/login.html" %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block extrastyle %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<!-- Login 8 - Bootstrap Brain Component -->
+<section class="bg-light pt-4 p-md-4 p-xl-5">
+    <div class="">
+      <div class="row justify-content-center">
+        <div class="col-12 col-xxl-11">
+          <div class="card border-light-subtle shadow-sm">
+            <div class="row g-0">
+              <div class="col-12 col-md-6 image-login">
+                <img class="img-fluid rounded-start w-100 h-100 object-fit-cover" loading="lazy" src="{% static 'assets/img/image6.png' %}" alt="Welcome back you've been missed!">
+              </div>
+              <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
+                <div class="col-12 col-lg-11 col-xl-10">
+                  <div class="card-body p-3 p-md-4 p-xl-5">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="mb-5">
+                          <div class="text-center mb-4">
+                            <a href="#!">
+                             <h4 class="title"> TIGGER</h4>
+                            </a>
+                          </div>
+                          <h4 class="text-center">Welcome back you've been missed!</h4>
+                        </div>
+                      </div>
+                    </div>
+                    <form method="post" action="{% url 'admin:login' %}">
+                        {% csrf_token %}
+                        <div class="row gy-3 overflow-hidden">
+                            <div class="col-12">
+                            <div class="form-floating mb-3">
+                                {% render_field form.username class="form-control" name="username" value="" placeholder="" type="text" %}
+                                <label for="username" class="form-label">{{form.username.label}}</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="form-floating mb-3">
+                            <!-- <input type="password" class="form-control" name="password" id="password" value="" placeholder="Password" required>
+                            <label for="password" class="form-label">Password</label> -->
+                            {% render_field form.password class="form-control" name="password" value="" placeholder="" %}
+                            <label for="password" class="form-label">{{form.password.label}}</label>
+                          </div>
+                          
+                        </div>
+
+                        <div class="col-12">
+                          <div class="d-grid">
+                            {% if form.errors %}
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <div class="alert alert-danger alert-dismissible fade show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                        <strong>Danger!</strong> {{ error|escape }}
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                                <div class="alert alert-danger alert-dismissible fade show">
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            
+                                    <strong>Danger!</strong> {{ error|escape }}
+                                </div>
+                            {% endfor %}
+                            {% endif %}
+                            <button class="btn btn-dark btn-lg" type="submit">Iniciar sesión</button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+{% endblock %}

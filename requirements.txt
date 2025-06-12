@@ -1,0 +1,11 @@
+Django==4.2
+djangorestframework
+markdown       # Markdown support for the browsable API.
+django-filter  # Filtering support
+django-widget-tweaks
+pytz
+django-phonenumber-field[phonenumbers]
+django-import-export
+openpyxl
+django-simple-history
+
