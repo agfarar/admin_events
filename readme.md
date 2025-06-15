@@ -7,18 +7,18 @@
 # construir entorno de desarrollo
 py -m venv .venv
 # activar entorno de desarrollo
-source .venv\Scripts\activate
+source .venv/Scripts/activate
 # instalar dependencias
 pip install -r requirements.txt
 ```
 
-3. Migrar datos de la base de datos esté paso es opcional, si se quiere crear una base de datos nueva.
+3. Paso opcional: Migrar datos de la base de datos esté paso es opcional, si se quiere crear una base de datos nueva.
 ``` bash
 python admin_manage_events/manage.py makemigrations
 python admin_manage_events/manage.py migrate
 ```
 
-4. Poblar datos de la base de datos con usuario y compañía
+4. Paso opcional: Poblar datos de la base de datos con usuario y compañía
 ``` bash
 python admin_manage_events/scripts/insert_data_user_company.py
 ```

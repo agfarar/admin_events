@@ -9,10 +9,6 @@ __pycache__
 *.pot
 *.pyc
 
-**/migrations/**
-!**/migrations
-!**/migrations/__init__.py
-
 # Environments
 .env
 .venv
@@ -22,4 +18,3 @@ venv
 
 # Visual Studio Code y db
 .vscode/*
-db.sqlite3
