@@ -1,0 +1,41 @@
+body {
+    background-color: #F8F9FA;
+}
+
+.bg-light {
+    padding-top: 6rem !important;
+}
+
+#header {
+    display: none !important; 
+}
+
+#footer {
+    display: none !important; 
+}
+
+.clear{
+    display: none !important;
+}
+
+#content{
+    padding: 0 0 0 0 !important;
+}
+
+.image-login{
+    background-color: #FBB447;
+}
+
+.btn-dark {
+    background-color: #FBB447;
+}
+
+input {
+    border-radius: 50px;
+    border-color: #FBB447;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: 800;
+}
